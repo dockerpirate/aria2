@@ -1,24 +1,21 @@
 FROM alpine
 
-MAINTAINER xujinkai <jack777@xujinkai.net>
+MAINTAINER NOBODY
 
 RUN apk update && \
-	addgroup -g 1000 abc && \
-	adduser -u 1000 -D --no-create-home abc abc && \
-	apk add --no-cache --update bash && \
-	mkdir -p /conf && \
-	mkdir -p /conf-copy && \
-	mkdir -p /data && \
-	apk add --no-cache --update aria2 && \
-	apk add git && \
-	git clone https://github.com/ziahamza/webui-aria2 /aria2-webui && \
+        addgroup -g 1000 abc && \
+        adduser -u 1000 -D --no-create-home -G abc abc && \
+        apk add --no-cache --update bash && \
+        apk add --no-cache --update aria2 && \
+        apk add git && \
+        git clone https://github.com/ziahamza/webui-aria2 /aria2-webui && \
     rm /aria2-webui/.git* -rf && \
     apk del git && \
-	apk add --update darkhttpd
+        apk add --update darkhttpd
 
-ADD files/start.sh /conf-copy/start.sh
-ADD files/aria2.conf /conf-copy/aria2.conf
-ADD files/on-complete.sh /conf-copy/on-complete.sh
+COPY files/start.sh /conf-copy/start.sh
+COPY files/aria2.conf /conf-copy/aria2.conf
+COPY files/on-complete.sh /conf-copy/on-complete.sh
 
 RUN chmod +x /conf-copy/start.sh
 
