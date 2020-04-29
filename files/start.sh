@@ -5,9 +5,6 @@ if [ ! -f /conf/aria2.conf ]; then
 		echo "rpc-secret=${SECRET}" >> /conf/aria2.conf
 	fi
 fi
-if [ ! -f /conf/on-complete.sh ]; then
-	cp /conf-copy/on-complete.sh /conf/on-complete.sh
-fi
 
 chmod +x /conf-copy/on-complete.sh
 touch /conf/aria2.session
