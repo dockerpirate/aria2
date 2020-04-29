@@ -11,8 +11,8 @@ fi
 
 chmod +x /conf-copy/on-complete.sh
 touch /conf/aria2.session
-chown -R abc:www-data /conf
-chown -R abc:www-data /data
+chown -R abc:abc /conf
+chown -R abc:abc /data
 
 su abc -c "darkhttpd /aria2-webui/docs --port 8081" &
 su abc -c "darkhttpd /data --port 8080" &
