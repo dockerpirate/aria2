@@ -3,6 +3,8 @@ FROM alpine
 MAINTAINER xujinkai <jack777@xujinkai.net>
 
 RUN apk update && \
+	addgroup -g 1000 abc && \
+	adduser -u 1000 -D --no-create-home abc abc && \
 	apk add --no-cache --update bash && \
 	mkdir -p /conf && \
 	mkdir -p /conf-copy && \
