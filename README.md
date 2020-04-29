@@ -13,15 +13,15 @@ I. replace **/DOWNLOAD_DIR** and **/CONFIG_DIR** for save data, and **YOUR_SECRE
 sudo docker run -d \
 --name aria2-with-webui \
 -p 6800:6800 \
--p 6880:80 \
--p 6888:8080 \
+-p 6880:8080 \
+-p 6888:8081 \
 -v /DOWNLOAD_DIR:/data \
 -v /CONFIG_DIR:/conf \
 -e SECRET=YOUR_SECRET_CODE \
  dockerpirate/aria2 
 ```
   
-II. Open `http://serverip:6880/` for aria2-webui, open `http://serverip:6888/` to browse data folder.  
+II. Open `http://serverip:6800/` for aria2-webui, open `http://serverip:6888/` to browse data folder.  
 
 ### Build:  
 `sudo docker build -f Dockerfile -t dockerpirate/aria2 .`  
