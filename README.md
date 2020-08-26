@@ -1,11 +1,22 @@
-NO SUPPORT。
-
 Aria2 with webui
 ---
 Only 29Mb.  
 Edit config file out of the image.  
 Move file completed to another folder.  
-(Tasks that contains more than one files will not be moved.)  
+(Tasks that contains more than one files will not be moved.) 
+
+## Architectures
+
+The architectures supported by this image are:
+
+- `linux/arm64`
+- `linux/arm/v7`
+- `linux/arm/v6`
+- `linux/amd64`
+- `linux/x86`
+
+Simply pulling `dockerpirate/aria2` should retrieve the correct image for your arch.
+ 
 
 ### Install
 I. replace **/DOWNLOAD_DIR** and **/CONFIG_DIR** for save data, and **YOUR_SECRET_CODE** for security. Run command below  
