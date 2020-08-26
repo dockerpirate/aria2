@@ -9,7 +9,6 @@ ARG ARIA_P
 MAINTAINER NOBODY
 
 RUN apk update && \
-	apk add --no-cache --update bash && \
 	apk add --no-cache --update aria2 && \
 	apk add git && \
 	git clone https://github.com/ziahamza/webui-aria2 /aria2-webui && \
@@ -30,6 +29,6 @@ VOLUME ["/data"]
 VOLUME ["/conf"]
 EXPOSE 6800
 EXPOSE 8080
-EXPOSE 80
+EXPOSE 8081
 
 CMD ["/conf-copy/start.sh"]
