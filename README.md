@@ -14,7 +14,7 @@ sudo docker run -d \
 --name aria2-with-webui \
 -p 6800:6800 \
 -p 6880:8080 \
--p 6888:8081 \
+-p 6888:80 \
 -v /DOWNLOAD_DIR:/data \
 -v /CONFIG_DIR:/conf \
 -e SECRET=YOUR_SECRET_CODE \
